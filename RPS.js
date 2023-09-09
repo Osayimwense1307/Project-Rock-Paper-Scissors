@@ -20,3 +20,16 @@ function getPlayerChoice() {
     }
 
 }
+
+function checkWinner(computerSelection, playerSelection) {
+    if (computerSelection === playerSelection) {
+        return `It's a tie`;
+    } else if (playerSelection === "rock" && computerSelection === "scissors" ||
+        playerSelection === "paper" && computerSelection === "rock" ||
+        playerSelection === "scissors" && computerSelection === "paper") {
+        return `player`;
+    } else {
+      return `computer`;  
+    }
+
+}
