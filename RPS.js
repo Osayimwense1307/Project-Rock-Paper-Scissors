@@ -45,3 +45,33 @@ function playRound(computerSelection, playerSelection) {
     }        
     
 }
+
+function playGame() {
+    let playerScore = 0;
+    let computerScore = 0;
+    console.log("A welcoming text");
+
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = getPlayerChoice();
+        const computerSelection = getComputerChoice();
+
+        console.log(playRound(computerSelection,playerSelection));
+        
+        if (checkWinner(computerSelection,playerSelection) == `player`) {
+            playerScore++;  
+        } else if (checkWinner(computerSelection,playerSelection) == `computer`) {
+            computerScore++;
+        } 
+                
+    }
+    console.log("Game over.")
+
+    if (playerScore > computerScore) {
+        console.log("Player wins")
+    } else if (playerScore < computerScore) {
+        console.log("Computer wins")
+    } else {
+       console.log("Its a tie"); 
+    }
+}
+playGame();
