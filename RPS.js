@@ -33,3 +33,15 @@ function checkWinner(computerSelection, playerSelection) {
     }
 
 }
+
+function playRound(computerSelection, playerSelection) {
+    const result = checkWinner(computerSelection, playerSelection)
+    if (result == `player`) {
+        console.log(`I won ${playerSelection} beats ${computerSelection}`);
+    } else if (result == `computer`) {
+        console.log(`You won ${computerSelection} beats ${playerSelection}`);
+    } else {
+        console.log("It's a tie")
+    }        
+    
+}
